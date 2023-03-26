@@ -33,7 +33,7 @@ if len(article_text)>100:
  # .......
 else:
  st.warning("Not enough words to summarize!")
- if st.button(“Generate Summary”,type=’primary’):
+ if st.button("Generate Summary",type=’primary’):
  
 # Use GPT-3 to generate a summary of the article
  response = openai.Completion.create(
@@ -43,7 +43,7 @@ else:
                     temperature = 0.5)
  
 # Print the generated summary
- res = response[“choices”][0][“text”]
+ res = response["choices"][0]["text"]
  st.success(res)
  # Give user the option to download result
 st.download_button(‘Download result’, res)
